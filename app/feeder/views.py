@@ -7,7 +7,7 @@ def index(request):
     url = 'http://rss.rssad.jp/rss/itm/1.0/netlab.xml'
     feeder = feedparser.parse(url)
 
-    for entry in feeder[entries]:
+    for entry in feeder['entries']:
         title = entry['title']
         summary = entry['summary']
         link = entry['link']
@@ -18,4 +18,4 @@ def index(request):
             'link': link,
         }
 
-    return render(request, 'index.html', context)
+    return render(request, 'feeder/index.html', context)
