@@ -10,3 +10,4 @@ class Entry(models.Model):
     summary = models.CharField(max_length=500)
     link = models.URLField(max_length=200)
     created_at = models.DateTimeField('created_at')
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
